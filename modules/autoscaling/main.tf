@@ -20,7 +20,7 @@ systemctl enable nginx
 systemctl start nginx
 echo "<h1>Hello from Auto Scaling Group</h1>" > /usr/share/nginx/html/index.html
 EOF
-)
+  )
 
   tag_specifications {
 
@@ -36,25 +36,25 @@ EOF
 }
 
 resource "aws_autoscaling_group" "web_asg" {
-    name = "terraform_asg"
+  name = "terraform_asg"
 
-    desired_capacity = 2
-    min_size = 2
-    max_size = 4
+  desired_capacity = 2
+  min_size         = 2
+  max_size         = 4
 
-    vpc_zone_identifier = var.subnet_ids
+  vpc_zone_identifier = var.subnet_ids
 
-    target_group_arns = [ var.target_group_arn ]
-    health_check_type = "ELB"
+  target_group_arns = [var.target_group_arn]
+  health_check_type = "ELB"
 
-    launch_template {
-        id = aws_launch_template.web.id
-        version = "$Latest"
-    }
+  launch_template {
+    id      = aws_launch_template.web.id
+    version = "$Latest"
+  }
 
-    tag {
-        key = "Name"
-        value = "terraform-asg-instance"
-        propagate_at_launch = true
-    }
+  tag {
+    key                 = "Name"
+    value               = "terraform-asg-instance"
+    propagate_at_launch = true
+  }
 }

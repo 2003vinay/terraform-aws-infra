@@ -1,29 +1,29 @@
 resource "aws_autoscaling_policy" "cpu_scale_up" {
-    name = "cpu-scale-up"
-    autoscaling_group_name = aws_autoscaling_group.web_asg.name
-    adjustment_type = "ChangeInCapacity"
-    scaling_adjustment = 1
-    cooldown = 120
+  name                   = "cpu-scale-up"
+  autoscaling_group_name = aws_autoscaling_group.web_asg.name
+  adjustment_type        = "ChangeInCapacity"
+  scaling_adjustment     = 1
+  cooldown               = 120
 }
 
 
 resource "aws_cloudwatch_metric_alarm" "high_cpu" {
-    alarm_name = "terraform-high-cpu"
-    comparison_operator = "GreaterThanThreshold"
-    evaluation_periods = 2
-    metric_name = "CPUUtilization"
-    namespace = "AWS/EC2"
-    period = 60
-    statistic = "Average"
-    threshold = 20
+  alarm_name          = "terraform-high-cpu"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period              = 60
+  statistic           = "Average"
+  threshold           = 20
 
-    dimensions = {
-        AutoScalingGroupName = aws_autoscaling_group.web_asg.name
-    }
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.web_asg.name
+  }
 
-    alarm_actions = [
-        aws_autoscaling_policy.cpu_scale_up.arn
-    ]
+  alarm_actions = [
+    aws_autoscaling_policy.cpu_scale_up.arn
+  ]
 }
 
 
