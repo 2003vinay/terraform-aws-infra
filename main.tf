@@ -49,7 +49,7 @@ module "security_group" {
 module "ec2" {
   source            = "./modules/ec2"
   instance_name     = local.instance_name
-  ami               = var.ami_id
+  ami               = data.aws_ami.amazon_linux.id
   instance_type     = var.instance_type
   security_group_id = module.security_group.security_group_id
   key_name          = aws_key_pair.terraform_key.key_name
@@ -91,7 +91,7 @@ module "alb" {
 module "autoscaling" {
   source = "./modules/autoscaling"
 
-  ami           = var.ami_id
+  ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
   key_name      = aws_key_pair.terraform_key.key_name
 

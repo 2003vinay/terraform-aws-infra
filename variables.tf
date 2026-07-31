@@ -33,11 +33,6 @@ variable "owner" {
   type        = string
 }
 
-variable "ami_id" {
-  description = "ami id"
-  type        = string
-}
-
 variable "vpc_cidr" {
   type = string
 }
