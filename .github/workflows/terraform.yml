@@ -33,8 +33,13 @@ jobs:
               run: terraform validate
 
             - name: Terraform Plan
-              run: terraform plan -lock=false -var-file=environments/dev.tfvars.example
+              run: terraform plan -out=tfplan -lock=false -var-file=environments/dev.tfvars.example
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        
+          
+            - name: Upload Terraform Plan
+              uses: actions/upload-artifact@v4
+              with:
+                name: terraform-plan
+                path: tfplan
