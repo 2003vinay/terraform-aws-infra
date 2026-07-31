@@ -42,5 +42,7 @@ variable "public_subnet_cidr" {
 }
 
 variable "availability_zone" {
+  description = "Availability_zone"
   type = string
+  default = "ap-south-1a"
 }
