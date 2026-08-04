@@ -153,7 +153,7 @@ The GitHub Actions workflow automatically performs Terraform formatting, initial
 Terraform generates an execution plan showing the resources that will be created, modified, or destroyed before applying any changes.
 Terraform executes the reviewed plan
 
-![Terraform_Apply](docs/screenshots/\Terraform_Apply.png)
+![Terraform_Apply](docs/screenshots/Terraform_Apply.png)
 
 ---
 
