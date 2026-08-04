@@ -144,7 +144,7 @@ terraform apply
 
 The GitHub Actions workflow automatically performs Terraform formatting, initialization, validation, and execution planning on every push or pull request.
 
-![GitHub Actions](docs/screenshots/github-actions-success.png)
+![github-actions-success](docs/screenshots/github-actions-success.png)
 
 ---
 
@@ -152,7 +152,7 @@ The GitHub Actions workflow automatically performs Terraform formatting, initial
 
 Terraform generates an execution plan showing the resources that will be created, modified, or destroyed before applying any changes.
 
-![Terraform Plan](docs/screenshots/\Terraform Apply.png)
+![Terraform Apply](docs/screenshots/\Terraform Apply.png)
 
 ---
 
@@ -168,7 +168,7 @@ A custom VPC was provisioned using Terraform to provide an isolated networking e
 
 Amazon EC2 instances are provisioned through an Auto Scaling Group using a Launch Template.
 
-![EC2 Instance](docs/screenshots/EC2.png)
+![EC2](docs/screenshots/EC2.png)
 
 ---
 
@@ -176,7 +176,7 @@ Amazon EC2 instances are provisioned through an Auto Scaling Group using a Launc
 
 The Application Load Balancer distributes incoming traffic across multiple EC2 instances to improve availability and scalability.
 
-![Application Load Balancer](docs/screenshots/ALB.png)
+![ALB](docs/screenshots/ALB.png)
 
 ---
 
@@ -208,7 +208,7 @@ CloudWatch monitors CPU utilization and triggers Auto Scaling policies when pred
 
 Terraform state is securely stored in an Amazon S3 bucket, enabling remote state management.
 
-![S3 Backend](docs/screenshots/s3 Backend.png)
+![S3 Backend](docs/screenshots/S3 Backend.png)
 
 ---
 
@@ -216,7 +216,7 @@ Terraform state is securely stored in an Amazon S3 bucket, enabling remote state
 
 Amazon DynamoDB is used for Terraform state locking, preventing simultaneous state modifications during infrastructure deployment.
 
-![DynamoDB State Lock](docs/screenshots/DynamoDB.png)
+![DynamoDB](docs/screenshots/DynamoDB.png)
 
 ---
 ---
