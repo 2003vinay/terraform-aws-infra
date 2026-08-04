@@ -21,7 +21,7 @@ jobs:
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
             - name: Terraform Apply
-              run : terraform apply -auto-approve -lock=false -var-file=environments/dev.tfvars
+              run : terraform apply -auto-approve -lock=false -var-file=environments/dev.tfvars.example
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
