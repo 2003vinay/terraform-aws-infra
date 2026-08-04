@@ -1,65 +1,172 @@
-# Terraform AWS Infrastructure Project
+# 🚀 Terraform AWS Infrastructure Provisioning
 
-## Overview
+![Terraform](https://img.shields.io/badge/Terraform-1.x-623CE4?logo=terraform)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazon-aws)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-blue?logo=githubactions)
 
-This project provisions a production-style AWS infrastructure using Terraform.
+## 📖 Overview
 
-## Features
+This project provisions production-style AWS infrastructure using Terraform.
 
-- Modular Terraform structure
-- Remote State with S3
-- State Locking using DynamoDB
-- Custom VPC
-- Two Public Subnets across Availability Zones
+The infrastructure is organized into reusable Terraform modules and follows Infrastructure as Code (IaC) best practices. The project also includes GitHub Actions workflows for Continuous Integration and manual deployment.
+
+---
+
+
+
+## ✨ Features
+
+- Modular Terraform code
+- Remote backend (S3)
+- State locking (DynamoDB)
+- VPC with public subnets
 - Internet Gateway
 - Route Tables
 - Security Groups
-- EC2 Launch Template
-- Application Load Balancer (ALB)
-- Target Group
+- EC2
+- Application Load Balancer
+- Launch Template
 - Auto Scaling Group
-- CloudWatch Scale Up & Scale Down Policies
-- GitHub Actions CI Pipeline
+- CloudWatch Auto Scaling
+- GitHub Actions CI/CD
 
-## Architecture
+---
 
-Internet
-↓
-Application Load Balancer
-↓
-Target Group
-↓
-Auto Scaling Group
-↓
-EC2 Instances
+## 📁 Project Structure
 
-## Technologies
+terraform-aws-infra/
+├── .github/
+│   └── workflows/
+│       ├── terraform.yml
+│       ├── apply.yml
+│       └── destroy.yml
+├── environments/
+│   └── dev.tfvars.example
+├── modules/
+│   ├── alb/
+│   ├── autoscaling/
+│   ├── ec2/
+│   ├── security-group/
+│   └── vpc/
+├── backend.tf
+├── main.tf
+├── outputs.tf
+├── variables.tf
+└── README.md
 
-- Terraform
-- AWS
+---
+
+## ☁️ AWS Services Used
+
+- VPC
 - EC2
 - ALB
 - Auto Scaling
+- Launch Template
 - CloudWatch
-- GitHub Actions
+- IAM Key Pair
+- S3
+- DynamoDB
 
-## Deployment
+---
 
-```bash
+## 🔄 GitHub Actions
+
+### CI Pipeline
+
+- Terraform fmt
+- Terraform init
+- Terraform validate
+- Terraform plan
+- Upload tfplan artifact
+
+### Apply Workflow
+
+Manual workflow that initializes Terraform and applies the infrastructure.
+
+### Destroy Workflow
+
+Manual workflow to destroy infrastructure.
+
+---
+
+## 🔐 Remote Backend
+
+Terraform state is stored remotely using:
+
+- Amazon S3
+- DynamoDB State Locking
+
+---
+
+## 📈 Auto Scaling
+
+- Launch Template
+- Auto Scaling Group
+- CPU-based Scale Up
+- CPU-based Scale Down
+
+---
+
+## ▶️ Getting Started
+
+Clone repository
+
+git clone https://github.com/2003vinay/terraform-aws-infra.git
+
+Create tfvars
+
+Copy
+
+environments/dev.tfvars.example
+
+to
+
+terraform.tfvars
+
+Run
+
 terraform init
+
 terraform plan
+
 terraform apply
-```
 
-## CI Pipeline
+---
 
-GitHub Actions automatically performs:
 
-- terraform fmt
-- terraform init
-- terraform validate
-- terraform plan
 
-## Author
+- GitHub Actions
+- AWS Console
+- ALB
+- Auto Scaling Group
+- CloudWatch
+- EC2
+- Terraform Apply
 
-Vinay Malyala
+---
+
+## 📚 Learning Outcomes
+
+- Terraform Modules
+- Remote State
+- GitHub Actions
+- Auto Scaling
+- CloudWatch
+- ALB
+- Infrastructure as Code
+- CI/CD Automation
+
+---
+
+## 🔮 Future Enhancements
+
+- RDS
+- Bastion Host
+- Private Subnets
+- NAT Gateway
+- ECS
+- EKS
+- WAF
+- Route53
+- ACM
