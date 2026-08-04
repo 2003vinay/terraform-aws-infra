@@ -144,15 +144,16 @@ terraform apply
 
 The GitHub Actions workflow automatically performs Terraform formatting, initialization, validation, and execution planning on every push or pull request.
 
-![github-actions-success](docs/screenshots/github-actions-success.png)
+![github_success](docs/screenshots/github_success.png)
 
 ---
 
-## 📋 Terraform Plan
+## 📋 Terraform Apply
 
 Terraform generates an execution plan showing the resources that will be created, modified, or destroyed before applying any changes.
+Terraform executes the reviewed plan
 
-![Terraform Apply](docs/screenshots/\Terraform Apply.png)
+![Terraform_Apply](docs/screenshots/\Terraform_Apply.png)
 
 ---
 
@@ -184,7 +185,7 @@ The Application Load Balancer distributes incoming traffic across multiple EC2 i
 
 The Target Group registers healthy EC2 instances and routes traffic received from the Application Load Balancer.
 
-![Target Group](docs/screenshots/Target Group.png)
+![Target_Group](docs/screenshots/Target_Group.png)
 
 ---
 
@@ -192,7 +193,7 @@ The Target Group registers healthy EC2 instances and routes traffic received fro
 
 The Auto Scaling Group automatically launches or terminates EC2 instances based on CloudWatch CPU utilization alarms.
 
-![Auto Scaling Group](docs/screenshots/Auto Scaling Group.png)
+![Auto_Scaling_Group](docs/screenshots/Auto_Scaling_Group.png)
 
 ---
 
@@ -200,7 +201,7 @@ The Auto Scaling Group automatically launches or terminates EC2 instances based 
 
 CloudWatch monitors CPU utilization and triggers Auto Scaling policies when predefined thresholds are exceeded.
 
-![CloudWatch Alarm](docs/screenshots/CloudWatch Alarm.png)
+![CloudWatch_Alarm](docs/screenshots/CloudWatch_Alarm.png)
 
 ---
 
@@ -208,7 +209,7 @@ CloudWatch monitors CPU utilization and triggers Auto Scaling policies when pred
 
 Terraform state is securely stored in an Amazon S3 bucket, enabling remote state management.
 
-![S3 Backend](docs/screenshots/S3 Backend.png)
+![S3_Backend](docs/screenshots/S3_Backend.png)
 
 ---
 
