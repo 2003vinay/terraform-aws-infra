@@ -136,14 +136,89 @@ terraform apply
 
 
 
-- GitHub Actions
-- AWS Console
-- ALB
-- Auto Scaling Group
-- CloudWatch
-- EC2
-- Terraform Apply
+---
 
+# 📸 Project Screenshots
+
+## 🚀 GitHub Actions CI Pipeline
+
+The GitHub Actions workflow automatically performs Terraform formatting, initialization, validation, and execution planning on every push or pull request.
+
+![GitHub Actions](docs/screenshots/github-actions-success.png)
+
+---
+
+## 📋 Terraform Plan
+
+Terraform generates an execution plan showing the resources that will be created, modified, or destroyed before applying any changes.
+
+![Terraform Plan](docs/screenshots/\Terraform Apply.png)
+
+---
+
+## 🌐 Virtual Private Cloud (VPC)
+
+A custom VPC was provisioned using Terraform to provide an isolated networking environment for the infrastructure.
+
+![VPC](docs/screenshots/VPC.png)
+
+---
+
+## 💻 EC2 Instance
+
+Amazon EC2 instances are provisioned through an Auto Scaling Group using a Launch Template.
+
+![EC2 Instance](docs/screenshots/EC2.png)
+
+---
+
+## ⚖️ Application Load Balancer (ALB)
+
+The Application Load Balancer distributes incoming traffic across multiple EC2 instances to improve availability and scalability.
+
+![Application Load Balancer](docs/screenshots/ALB.png)
+
+---
+
+## 🎯 Target Group
+
+The Target Group registers healthy EC2 instances and routes traffic received from the Application Load Balancer.
+
+![Target Group](docs/screenshots/Target Group.png)
+
+---
+
+## 📈 Auto Scaling Group
+
+The Auto Scaling Group automatically launches or terminates EC2 instances based on CloudWatch CPU utilization alarms.
+
+![Auto Scaling Group](docs/screenshots/Auto Scaling Group.png)
+
+---
+
+## 📊 CloudWatch Alarm
+
+CloudWatch monitors CPU utilization and triggers Auto Scaling policies when predefined thresholds are exceeded.
+
+![CloudWatch Alarm](docs/screenshots/CloudWatch Alarm.png)
+
+---
+
+## 🪣 Remote Terraform State (Amazon S3)
+
+Terraform state is securely stored in an Amazon S3 bucket, enabling remote state management.
+
+![S3 Backend](docs/screenshots/s3 Backend.png)
+
+---
+
+## 🔒 Terraform State Locking (DynamoDB)
+
+Amazon DynamoDB is used for Terraform state locking, preventing simultaneous state modifications during infrastructure deployment.
+
+![DynamoDB State Lock](docs/screenshots/DynamoDB.png)
+
+---
 ---
 
 ## 📚 Learning Outcomes
